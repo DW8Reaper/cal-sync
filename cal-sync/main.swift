@@ -10,7 +10,7 @@ import Foundation
 import EventKit
 
 func printHelp() {
-    print("\nUsage: CalendarSync <arguments>")
+    print("\nUsage: cal-sync <arguments>")
     print("  --help               print this help message")
     print("  --list               List available calendars ")
     print("  --src <calendar ID>  ID of source calendar to copy from ")
