@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "unit-tests/TestCalendarSync.swift"
+            timestampString = "501260775.899357"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "testSync()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "unit-tests/TestCalendarSync.swift"
+            timestampString = "501260775.899357"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "testSync()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "unit_tests.TestCalendarSync.testSync () throws -&gt; ()"
+                  moduleName = "unit-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dewildt/Insync/Projects/cal-sync/unit-tests/TestCalendarSync.swift"
+                  timestampString = "501260134.372592"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "1426">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "unit_tests.TestCalendarSync.(testSync () throws -&gt; ()).(implicit closure #4)"
+                  moduleName = "unit-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dewildt/Insync/Projects/cal-sync/unit-tests/TestCalendarSync.swift"
+                  timestampString = "501260134.373754"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "unit-tests/TestCalendarSync.swift"
+            timestampString = "501260775.899357"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "testSync()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "unit_tests.TestCalendarSync.testSync () throws -&gt; ()"
+                  moduleName = "unit-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dewildt/Insync/Projects/cal-sync/unit-tests/TestCalendarSync.swift"
+                  timestampString = "501260158.6943"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "1217">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "unit_tests.TestCalendarSync.(testSync () throws -&gt; ()).(implicit closure #3)"
+                  moduleName = "unit-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dewildt/Insync/Projects/cal-sync/unit-tests/TestCalendarSync.swift"
+                  timestampString = "501260158.695711"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "unit-tests/TestCalendarSync.swift"
+            timestampString = "501262158.122904"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "validateEvents(conf:expectedEvents:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "unit_tests.TestCalendarSync.validateEvents (conf : unit_tests.SyncArguments, expectedEvents : Swift.Array&lt;__ObjC.EKEvent&gt;) -&gt; ()"
+                  moduleName = "unit-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dewildt/Insync/Projects/cal-sync/unit-tests/TestCalendarSync.swift"
+                  timestampString = "501261680.079525"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "2714">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "unit_tests.TestCalendarSync.(validateEvents (conf : unit_tests.SyncArguments, expectedEvents : Swift.Array&lt;__ObjC.EKEvent&gt;) -&gt; ()).(implicit closure #2)"
+                  moduleName = "unit-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dewildt/Insync/Projects/cal-sync/unit-tests/TestCalendarSync.swift"
+                  timestampString = "501261680.080856"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "unit-tests/TestCalendarSync.swift"
+            timestampString = "501261684.555023"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "isExpected(actual:expected:noSync:enabled:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
