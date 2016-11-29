@@ -6,6 +6,15 @@ URL which unfortunately makes the URL field unusable but also means there are no
 ## Building
 Building should be as simple as opening the project file in XCode and then building the cal-sync target. There is also a 
 unit-test target for executing the unit tests.
+
+To build from the command line:
+1. checkout or download cal-sync to your computer
+2. go to the project root directory (the same directory containing this file)
+3. to build run: `xcodebuild -target cal-sync` this will create a build subdirectory with all the output files
+4. go into the new build subdirectory
+5. go into the Release subdirectory
+6. the executable output file is `cal-sync`. 
+
 ## Viewing available Calendars
 To sync calendars, you need to know their unique ID's. This can be retrieved with cal-sync by running with the list command:
 ```{shell}
