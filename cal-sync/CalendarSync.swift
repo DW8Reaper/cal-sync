@@ -88,6 +88,7 @@ public class CalendarSync {
     public func determineEventActions(from: Date, to: Date) throws -> [SyncEvent] {
         var dstEvents: [String: EKEvent] = [:]
         var actions: [SyncEvent] = []
+        var processed: [String] = []
 
         //Get destination events and remove them
         let dstStartDate = Date(timeIntervalSinceNow: TimeInterval((-200 * 1) * 24 * 60 * 60))
@@ -114,6 +115,13 @@ public class CalendarSync {
         let srcEvents = eventStore.events(matching: srcEventMatcher)
 
         for srcEvent in srcEvents {
+            // only process recurring events the first time we find them
+            if processed.contains(srcEvent.eventIdentifier) {
+                continue
+            } else {
+                processed.append(srcEvent.eventIdentifier)
+            }
+
             let srcHash = makeHash(event: srcEvent, config: syncConfig)
             if let dstEvent = dstEvents[srcEvent.eventIdentifier] {
                 var parts: [String] = dstEvent.url!.absoluteString.components(separatedBy: ":")
@@ -165,6 +173,12 @@ public class CalendarSync {
             dst.availability = src.availability
         } else {
             dst.availability = EKEventAvailability.free
+        }
+
+        if let rules = src.recurrenceRules {
+            for rule : EKRecurrenceRule in rules {
+                dst.addRecurrenceRule(rule)
+            }
         }
     }
 

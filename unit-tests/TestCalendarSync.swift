@@ -32,8 +32,8 @@ class TestCalendarSync: XCTestCase {
 
     let syncDateStart = Date(timeIntervalSinceNow: TimeInterval(-20000))
     let syncDateEnd = Date(timeIntervalSinceNow: TimeInterval(40000))
-    
-    func makeEvent(calendar: EKCalendar, title: String, location: String, start: Date, end: Date, allDay: Bool, available: EKEventAvailability, notes: String, url: String) throws -> EKEvent {
+
+    func makeEvent(calendar: EKCalendar, title: String, location: String, start: Date, end: Date, allDay: Bool, available: EKEventAvailability, notes: String, url: String, rule: EKRecurrenceRule? = nil) throws -> EKEvent {
         let event = EKEvent(eventStore: eventStore!)
         event.calendar = calendar
         event.title = title
@@ -44,6 +44,10 @@ class TestCalendarSync: XCTestCase {
         event.isAllDay = allDay
         event.notes = notes
         event.url = URL(string: url)
+
+        if let recRule = rule {
+            event.addRecurrenceRule(recRule)
+        }
 
         try eventStore!.save(event, span: EKSpan.thisEvent, commit: false)
         return event
@@ -92,12 +96,14 @@ class TestCalendarSync: XCTestCase {
                     notes: "notes 1",
                     url: "")
 
+            let rule = EKRecurrenceRule(recurrenceWith: EKRecurrenceFrequency.daily, interval: 1, end: EKRecurrenceEnd(occurrenceCount: 3))
             testEvent2 = try makeEvent(calendar: srcCalendar!, title: "event 2", location: "location 2",
                     start: event2Start,
                     end: event2End,
                     allDay: false, available: EKEventAvailability.free,
                     notes: "notes 2",
-                    url: "")
+                    url: "",
+                    rule: rule)
 
             testEvent3 = try makeEvent(calendar: srcCalendar!, title: "event 3", location: "location 3",
                     start: event3Start,
