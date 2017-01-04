@@ -96,7 +96,13 @@ public class CalendarSync {
         let dstEventMatcher = eventStore.predicateForEvents(withStart: dstStartDate, end: dstEndDate, calendars: [dstCalendar])
         let dstEvList = eventStore.events(matching: dstEventMatcher)
 
-        for dstEvent in dstEvList {
+        for var dstEvent in dstEvList {
+            if dstEvent.hasRecurrenceRules {
+                // For exchange calendars it can happen that when you sync a recurring event it creates a duplicate for each recursion each
+                // time you sync. To prevent this we find the first occurrence of any event with a recursion rule and sync it instead
+                try dstEvent = eventStore.calendarItem(withIdentifier: dstEvent.eventIdentifier) as! EKEvent
+            }
+
             if let url = dstEvent.url {
                 if url.absoluteString.hasPrefix(syncConfig.prefix) {
                     var parts: [String] = url.absoluteString.components(separatedBy: ":")
@@ -144,7 +150,6 @@ public class CalendarSync {
     }
 
     private func copyEvent(src: EKEvent, hash: String, dst: EKEvent) {
-        dst.calendar = dstCalendar
         dst.startDate = src.startDate
         dst.endDate = src.endDate
         dst.isAllDay = src.isAllDay
@@ -198,7 +203,7 @@ public class CalendarSync {
                     }
 
                     if (syncConfig.testMode == false) {
-                        try eventStore.remove(action.dstEvent!, span: EKSpan.thisEvent, commit: false)
+                        try eventStore.remove(action.dstEvent!, span: EKSpan.futureEvents, commit: false)
                     }
                 case SyncEventAction.create:
                     if (syncConfig.verbose) {
@@ -207,8 +212,9 @@ public class CalendarSync {
 
                     if (syncConfig.testMode == false) {
                         let newEvent = EKEvent(eventStore: eventStore)
+                        newEvent.calendar = dstCalendar
                         copyEvent(src: action.srcEvent, hash: action.srcHash, dst: newEvent)
-                        try eventStore.save(newEvent, span: EKSpan.thisEvent, commit: false)
+                        try eventStore.save(newEvent, span: EKSpan.futureEvents, commit: false)
                     }
                 case SyncEventAction.update:
                     if (syncConfig.verbose) {
@@ -216,8 +222,10 @@ public class CalendarSync {
                     }
 
                     if (syncConfig.testMode == false) {
+                        // for recurring events we always use the first occurrence of the recursion as our source, for this reason we also update the current
+                        // event and all future events every time
                         copyEvent(src: action.srcEvent, hash: action.srcHash, dst: action.dstEvent!)
-                        try eventStore.save(action.dstEvent!, span: EKSpan.thisEvent, commit: false)
+                        try eventStore.save(action.dstEvent!, span: EKSpan.futureEvents, commit: false)
                     }
             }
         }
