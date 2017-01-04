@@ -9,8 +9,11 @@
 import Foundation
 import EventKit
 
+let VERSION = "v0.1.1-beta"  // also update in project settings in case we bundle this properly one day
+
 func printHelp() {
-    print("\nUsage: cal-sync <arguments>")
+    print("\nCalendar sync utility \(VERSION)")
+    print("\n Usage: cal-sync <arguments>")
     print("  --help               print this help message")
     print("  --list               List available calendars ")
     print("  --src <calendar ID>  ID of source calendar to copy from ")
